@@ -4,6 +4,79 @@ let thead = document.querySelector('#container thead tr');
 let tbody = document.querySelector('#container tbody');
 let button = document.getElementById('button')
 
+class studentList {
+    subjects = [];
+    students = [];
+    avg = [];
+    constructor(students, subjects, avg) {
+        this.students = students;
+        this.subjects = subjects;
+
+        document.getElementById('button').addEventListener("click", addgrade);
+        this.generateTable();
+    }
+
+    generateTable() {
+        this.generateHead();
+        this.generateStudents();
+        this.generateAvg();
+    }
+
+    generateHead() {
+        let thead = document.querySelector('#container thead tr');
+        let addthead = '';
+    
+        for (let i = 0; i < this.subjects.length; i++) {
+            addthead += `<th>${this.subjects[i]}</th>`;
+        }
+        
+        thead.innerHTML += addthead;
+    }
+
+    generateAvg() {
+        let avg = [0, 0, 0, 0]
+        let addaverage = '';
+
+        for (let i = 0; i < students.length; i++) {
+            for (let a = 0; a < this.students[i].score.length; a++) {
+                avg[a] += this.students[i].score[a]
+            }
+        }
+        
+        for (let i = 0; i < avg.length; i++) {
+            avg[i] /=this.students.length;
+        }
+
+        addaverage = `<tr>
+        <td colspan= "2">AVERAGE</td>`;
+        `</tr>`
+        for (let i = 0; i < avg.length; i++) {
+            addaverage +=`<td>${Math.round(avg[i])}</td>`
+        }
+    addaverage += `</tr>`
+    this.avg = avg;
+     tbody.innerHTML += addaverage;
+    }
+
+    generateStudents() {
+        let tbody = document.querySelector('#container tbody');
+        let addstudent = ''
+        for (let i = 0; i < students.length; i++) {
+            addstudent += `<tr>
+                        <td>${students[i].name}</td>
+                        <td>${students[i].lastname}</td>`;
+                     for(let a = 0; a < subjects.length; a++) {
+                        addstudent += `<td class="${this.avg[a] > students[i].score[a] ? 'red' : 'green'}">${students[i].score[a]}</td>`
+                        console.log(this.avg)
+                     }
+            addstudent += `</tr>`
+        }
+        tbody.innerHTML += addstudent;
+    }
+
+    
+}
+
 let subjects = ['HTML', 'CSS', 'JavaScript', 'Math'];
 let students = [
     {
@@ -33,58 +106,7 @@ let students = [
     },
 ];
 
-//average
-
-let avg = [0, 0, 0, 0]
-
-for (let i = 0; i < students.length; i++) {
-    for (let a = 0; a < students[i].score.length; a++) {
-        avg[a] += students[i].score[a]
-    }
-}
-
-for (let i = 0; i < avg.length; i++) {
-    avg[i] /=students.length;
-}
-
-
-
-//thead
-
-let addthead = '';
-
-for (let i = 0; i < subjects.length; i++) {
-    addthead += `<th>${subjects[i]}</th>`;
-}
-
-thead.innerHTML += addthead;
-
-
-
-let addstudent = ''
-
-for (let i = 0; i < students.length; i++) {
-    addstudent += `<tr>
-                <td>${students[i].name}</td>
-                <td>${students[i].lastname}</td>`
-             for(let a = 0; a < subjects.length; a++) {
-                 addstudent += `<td class="${avg[a] > students[i].score[a] ? 'red' : 'green'}">${students[i].score[a]}</td>`
-             }
-    addstudent += `</tr>`
-}
-tbody.innerHTML += addstudent;
-
-addaverage = `<tr>
-        <td colspan= "2">AVERAGE</td>`;
-        `</tr>`
-        for (let i = 0; i < avg.length; i++) {
-            addaverage +=`<td>${avg[i]}</td>`
-        }
-    addaverage += `</tr>`
-
-tbody.innerHTML += addaverage;
-
-button.addEventListener("click", addgrade)
+new studentList(students, subjects,);
 
 function addgrade() {
 
@@ -128,7 +150,7 @@ function addgrade() {
         addstudent += `</tr>`
     }
     tbody.innerHTML = addstudent;
-    
+
     addaverage = `<tr>
             <td colspan= "2">AVERAGE</td>`;
             `</tr>`
@@ -138,6 +160,5 @@ function addgrade() {
         addaverage += `</tr>`
     
     tbody.innerHTML += addaverage;
-    document.contact-form.reset();
 }
 
