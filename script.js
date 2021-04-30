@@ -12,14 +12,18 @@ class studentList {
         this.students = students;
         this.subjects = subjects;
 
-        document.getElementById('button').addEventListener("click", addgrade);
         this.generateTable();
+        this.eventListener();
+    }
+    
+    eventListener() {
+        document.getElementById('button').addEventListener("click", this.generateGradePlus.bind(this));
+        
     }
 
     generateTable() {
         this.generateHead();
-        this.generateStudents();
-        this.generateAvg();
+        this.generateGrade();
     }
 
     generateHead() {
@@ -33,7 +37,8 @@ class studentList {
         thead.innerHTML += addthead;
     }
 
-    generateAvg() {
+    generateGrade() {
+        let tbody = document.querySelector('#container tbody');
         let avg = [0, 0, 0, 0]
         let addaverage = '';
 
@@ -53,27 +58,48 @@ class studentList {
         for (let i = 0; i < avg.length; i++) {
             addaverage +=`<td>${Math.round(avg[i])}</td>`
         }
-    addaverage += `</tr>`
-    this.avg = avg;
-     tbody.innerHTML += addaverage;
-    }
 
-    generateStudents() {
-        let tbody = document.querySelector('#container tbody');
-        let addstudent = ''
-        for (let i = 0; i < students.length; i++) {
+        addaverage += `</tr>`
+        this.avg = avg;
+         
+         /*student*/ 
+         let addstudent = ''
+         for (let i = 0; i < students.length; i++) {
             addstudent += `<tr>
                         <td>${students[i].name}</td>
                         <td>${students[i].lastname}</td>`;
                      for(let a = 0; a < subjects.length; a++) {
                         addstudent += `<td class="${this.avg[a] > students[i].score[a] ? 'red' : 'green'}">${students[i].score[a]}</td>`
-                        console.log(this.avg)
                      }
             addstudent += `</tr>`
         }
         tbody.innerHTML += addstudent;
+        tbody.innerHTML += addaverage;
+
+
+
     }
 
+    generateGradePlus() {
+        let fn = document.getElementById('fn').value
+        let ln = document.getElementById('ln').value
+        let html = document.getElementById('html').value
+        let css = document.getElementById('css').value
+        let js = document.getElementById('js').value
+        let math = document.getElementById('math').value
+    
+        
+        let addstudents = {
+                name: fn,
+                lastname: ln,
+                score: [parseInt(html), parseInt(css), parseInt(js), parseInt(math),]
+        }
+    
+        students.push(addstudents);
+
+        tbody.innerHTML += '';
+        console.log()
+    }
     
 }
 
@@ -106,59 +132,4 @@ let students = [
     },
 ];
 
-new studentList(students, subjects,);
-
-function addgrade() {
-
-    let fn = document.getElementById('fn').value
-    let ln = document.getElementById('ln').value
-    let html = document.getElementById('html').value
-    let css = document.getElementById('css').value
-    let js = document.getElementById('js').value
-    let math = document.getElementById('math').value
-
-    
-    let addstudents = {
-            name: fn,
-            lastname: ln,
-            score: [parseInt(html), parseInt(css), parseInt(js), parseInt(math),]
-    }
-
-    students.push(addstudents);
-    
-    let avg = [0, 0, 0, 0]
-
-    for (let i = 0; i < students.length; i++) {
-        for (let a = 0; a < students[i].score.length; a++) {
-            avg[a] += students[i].score[a]
-        }
-    }
-    
-    for (let i = 0; i < avg.length; i++) {
-        avg[i] /=students.length;
-    }
-    
-
-    addstudent = ''
-    for (let i = 0; i < students.length; i++) {
-        addstudent += `<tr>
-                    <td>${students[i].name}</td>
-                    <td>${students[i].lastname}</td>`
-                 for(let a = 0; a < subjects.length; a++) {
-                     addstudent += `<td class="${avg[a] > students[i].score[a] ? 'red' : 'green'}">${students[i].score[a]}</td>`
-                 }
-        addstudent += `</tr>`
-    }
-    tbody.innerHTML = addstudent;
-
-    addaverage = `<tr>
-            <td colspan= "2">AVERAGE</td>`;
-            `</tr>`
-            for (let i = 0; i < avg.length; i++) {
-                addaverage +=`<td>${Math.round(avg[i])}</td>`
-            }
-        addaverage += `</tr>`
-    
-    tbody.innerHTML += addaverage;
-}
-
+new studentList(students, subjects);
