@@ -1,0 +1,289 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    font-size: 20px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+/*burgerbar*/
+
+.header {
+    width: 100%;
+    position: absolute;
+    z-index: 2;
+}
+
+.forbar {
+    height: 70px;
+    width: 100%;
+    background-color: #40D3DC;
+}
+
+#burgerbar {
+    width: 35px;
+    height: 30px;
+    padding: 20px;
+}
+
+.bar {
+    width: 100%;
+    height: 5px;
+    background-color: crimson;
+    border-radius: 5px;
+    transition: 0.3s ease;
+} 
+
+
+#bar2 {
+    transform: translateY(5px)
+}
+
+#bar3 {
+    transform: translateY(10px)
+}
+
+nav {
+    display: none;
+}
+
+li {
+    list-style: none;
+    margin: 20px;
+    font-size: 23px;
+}
+
+a {
+    color: black;
+    text-decoration: none;
+}
+
+a:hover {
+    font-weight: bold;
+}
+
+.back {
+    display: none;
+}
+
+#back {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 150px;
+    height: 300px;
+    background-color: #40D3DC;
+    z-index: 1;
+    
+}
+
+/*JS change*/
+
+.change .bar {
+    background-color: black;
+}
+
+.change #bar1 {
+    transform: translateY(4px) rotate(-45deg);
+}
+
+.change #bar2 {
+    display: none;
+}
+
+.change #bar3 {
+    transform: translateY(-1px) rotate(45deg)
+}
+
+.change {
+    display: block;
+}
+
+/*Slide STARTTTTTTT*/
+
+
+
+
+.container {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.slider {
+    width: 1000px;
+    height: 600px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.slides {
+    width: 500%;
+    height: 600px;
+    display: flex;
+    transition: 1s;
+}
+
+.slides input {
+    display: none;
+}
+
+.slide {
+    width: 20%;
+    transition: 1s;
+}
+
+.slide img {
+    width: 1000px;
+    height: 600px;
+}
+
+img {
+    object-fit: cover;
+}
+
+.navigation-man {
+    position: absolute;
+    width: 1000px;
+    margin-top: -40px;
+    display: flex;
+    justify-content: center;
+
+}
+
+.manual-btn {
+    border: 2px solid #40D3DC;
+    padding: 5px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 1s;
+}
+
+.manual-btn:not(:last-child) {
+    margin-right: 40px;
+}
+
+.manual-btn:hover {
+    background: #40D3DC;
+}
+
+
+#radio1:checked ~ .first {
+    margin-left: 0;
+}
+
+#radio2:checked ~ .first {
+    margin-left: -20%;
+}
+
+#radio3:checked ~ .first {
+    margin-left: -40%;
+}
+
+#radio4:checked ~ .first {
+    margin-left: -60%;
+}
+
+#radio5:checked ~ .first {
+    margin-left: -80%;
+}
+
+.forarrow {
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    width: 1000px;
+}
+
+.forarrow button {
+    border: none;
+
+}
+
+.arrow {
+    background-color: rgba(0, 0, 0, 0.13);
+    color: #1cd7e0de;
+    font-size: 100px;
+    margin-top: -600px;
+    border-radius: 10px;
+    width: 55px;
+}
+
+#perv {
+    border-bottom-left-radius: 10px;
+    border-top-left-radius: 10px;
+}
+
+#next {
+    border-bottom-right-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+/*Modal STARTTTTT*/
+
+#modal-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.781);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-bg {
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.3s ;
+}
+
+.modal-active {
+    visibility: visible;
+    opacity: 1;
+}
+
+
+.modal {
+    position: relative;
+    background-color: white;
+    width: 30%;
+    height: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal div {
+    font-size: 50px;
+}
+
+.button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: -50px;
+}
+
+#modalstart {
+    width: 100px;
+    height: 40px;
+    background: #40D3DC;
+    border-radius: 7px;
+    font-size: 23px;
+    border: 1px solid #278d92
+}
+
+.modal-close {
+    font-weight: bolder;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}

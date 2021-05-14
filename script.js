@@ -1,55 +1,48 @@
-// Largest product in a series
-let num = "731671765313306249192251196744265747423553491949349698352031277450632623957831801698480186947885184385861560789112949495459501737958331952853208805511125406987471585238630507156932909632952274430435576689664895044524452316173185640309871112172238311362229893423380308135336276614282806444486645238749303589072962904915604407723907138105158593079608667017242712188399879790879227492190169972088809377665727333001053367881220235421809751254540594752243525849077116705560136048395864467063244157221553975369781797784617406495514929086256932197846862248283972241375657056057490261407972968652414535100474821663704844031998900088952434506585412275886668811642717147992444292823086346567481391912316282458617866458359124566529476545682848912883142607690042242190226710556263211111093705442175069416589604080719840385096245544436298123098787992724428490918884580156166097919133875499200524063689912560717606058861164671094050775410022569831552000559357297257163626956188267042825248360082325753042075296345";
+let burgerBar = document.getElementById("burgerbar");
 
-let max = 0;
+burgerBar.addEventListener("click", openBar);
 
-for (let i = 0; i < num.length - 13; i++) {
-    let nam = 1;
-    for (let j = 0; j < 13; j++) {
-        if (Number(num[i + j]) === 0) {
-            i = i + j + 1;
-            mult = 0
-            break;
-        }
-        nam *= Number(num[i + j]);
-    }
+function openBar() {
 
-    if (nam > max) {
-        max = nam;
-    }
-}
-console.log(max)
-
-
-//Fibonacci
-/*
-let x = 1;
-let y = 2; 
-let sum = 2;
-while (x + y < 4000000) {
-    let tmp = x + y;
-    if (tmp % 2 === 0) sum += tmp;
-    x = y;
-    y = tmp;
+    document.getElementById("burgerbar").classList.toggle("change")
+    document.getElementById("nav").classList.toggle("change")
+    document.getElementById("back").classList.toggle("change")
 }
 
-console.log(sum)
-*/
+//Slide STARTTTTT
 
-function caunt(first = 1, second = 2, maxNumber = 4000000, sum = 2) {
-    let free = first;
-    first = second;
-    second = first + free;
 
-    if (second % 2 ===0) {
-        sum += second;
-    }
+let nextBtn = document.getElementById("next")
+let prevBtn = document.getElementById("prev")
+let slider = document.querySelector(".slides")
+let sectionIndex = 0;
 
-    if (second > maxNumber) {
-        return sum;
-    }
+nextBtn.addEventListener("click", next)
 
-    return caunt(first, second, maxNumber, sum);
+function next() {
+    sectionIndex = (sectionIndex < 4) ? sectionIndex + 1 :  0;
+    slider.style.transform = 'translate(' + (sectionIndex) * -20 +'%)';
 }
 
-console.log(caunt(1, 2, 4000000));
+prevBtn.addEventListener("click", prev)
+
+function prev() {
+    sectionIndex = (sectionIndex > 0) ? sectionIndex - 1 :  4;
+    slider.style.transform = 'translate(' + (sectionIndex) * -20 +'%)';
+}
+
+//Modal START
+
+let modalStart = document.getElementById("modalstart")
+
+let modalEnd = document.querySelector(".modal-close")
+
+modalStart.addEventListener("click", Func)
+
+modalEnd.addEventListener("click", Func)
+
+
+function Func() {
+    document.getElementById("modal-bg").classList.toggle("modal-active")
+}
+
