@@ -4,36 +4,49 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+    <script src="https://kit.fontawesome.com/39c51b0a32.js" crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
     <link rel="stylesheet" href="./style.css">
     <title>Document</title>
 </head>
 <body>
     <header>
-        <div class="top-header"> 
+        <div class="bg-light fs-6 pt-3 text-secondary"> 
             <div class="container theme-color-1">
-                <div class="d-flex">
+                <div class="row">
                     <div class="col-6">
                         <div class="header-container">
-                            <ul class="d-flex list-unstyled">
-                                <li class="me-2 " >Welcome to Our Store Multikart</li>
-                                <li>Call Us: 123 - 456 - 7890</li>
+                            <ul class="d-flex list-unstyled ">
+                                <li class="mx-4" >Welcome to Our Store Multikart</li>
+                                <li><i class="fas fa-phone-alt text-danger mx-2"></i>Call Us: 123 - 456 - 7890</li>
                             </ul>
                         </div>
                     </div>
-                    <div class="col-6 text-end ">
-                        <ul class=" list-unstyled">
-                            <li><a href="#"></a></li>
-                            <li>My Account</li>
+                    <div class="col-6 text-end">
+                        <ul class="list-unstyled d-inline-flex ">
+                            <li class="me-4">
+                                <a href="#">
+                                    <i class="fa fa-heart  text-secondary"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <i class="fa fa-user text-secondary pe-2" aria-hidden="true"> </i>
+                                    </a>
+                            </li>My Account
                         </ul>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="container">
+        <div class="container my-4">
             <div class="d-flex justify-content-between">
                 <div class="d-flex">
-                    <div class="navbar me-5 m-auto">burgerbar</div>
+                    <div class="navbar me-5 m-auto">
+                        <i class="fa fa-bars sidebar-bar fs-3" aria-hidden="true"></i>
+                    </div>
                     <div class="brand-logo m-auto">
                         <a href="./index.html">
                         <img src="./Images/logo.png" alt=""></a>
@@ -42,31 +55,80 @@
                 <div class="d-flex fs-4">
                     <div class="">
                         <nav>
-                            <ul class="d-flex list-unstyled fs-4 mt-3">
+                            <ul class="d-flex list-unstyled fs-6 mt-3">
                                 <li class="mx-2">HOME</li>
-                                <li class="mx-2">FEATURE</li>
-                                <li class="mx-2">SHOP</li>
-                                <li class="mx-2">PRODUCTS</li>
-                                <li class="mx-2">PAGES</li>
-                                <li class="mx-2">BLOG</li>
+                                <li class="mx-2">FEATURE <span class="fa fa-angle-down"></span></li>
+                                <li class="mx-2">SHOP <span class="fa fa-angle-down"></span></li>
+                                <li class="mx-2">PRODUCTS <span class="fa fa-angle-down"></span></li>
+                                <li class="mx-2">PAGES <span class="fa fa-angle-down"></span></li>
+                                <li class="mx-2">BLOG <span class="fa fa-angle-down"></span></li>
                             </ul>
                         </nav>
                     </div>
-                    <div class="m-auto"> FOR ICONS</div>
+                    <div class="m-auto">
+                        <ul class="d-flex list-unstyled">
+                            <li class="mx-3">
+                                <img src="https://themes.pixelstrap.com/multikart/assets/images/icon/search.png" alt="">
+                            </li>
+                            <li class="mx-3">
+                                <img src="https://themes.pixelstrap.com/multikart/assets/images/icon/setting.png" alt="">
+                            </li>
+                            <li class="mx-3">
+                                <img src="https://themes.pixelstrap.com/multikart/assets/images/icon/cart.png" alt="">
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
     </header>
     <section>
-        <img src="./Images/1.jpg" class="img-fluid img-thumbnail">
+        <div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <img src="./Images/1.jpg" class="d-block w-100" alt="...">
+                  <div class="carousel-caption d-none d-md-block mb-5  col-4">
+                      <div class="text-secondary fs-5">Welcome To Fashion</div>
+                      <div class="fs-1 fw-bold">MEN FASHION</div>
+                      <button class="p-3 fw-bold  text-light bg-danger border-0">SHOP NOW</button>
+                  </div>
+                </div>
+                <div class="carousel-item">
+                  <img src="./Images/2.jpg" class="d-block w-100" alt="...">
+                  <div class="carousel-caption d-none d-md-block mb-5 col-4">
+                      <div class="text-secondary fs-5">Welcome To Fashion</div>
+                      <div class="fs-1 fw-bold">WOMEN FASHION</div>
+                      <button class="p-3 fw-bold  text-light bg-danger border-0">SHOP NOW</button>
+                  </div>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
     </section>
     <section>
-        <div class="container d-flex justify-content-between mt-5">
-            <div class="">
-                <img src="./Images/sub-banner1.jpg" alt="" class="w-100">
+        <div class="container d-flex mt-5 carousel-inner active">
+            <div class="col-6 mx-3">
+                <div>
+                    <img src="./Images/sub-banner1.jpg" alt="" class="w-100">
+                </div>
+                <div class="col-6 carousel-caption ">
+                    <div class="text-danger fs-5">SAVE 30%</div>
+                    <div class="text-dark fs-1 fw-bold">MEN</div>
+                </div>
             </div>
-            <div class="">
+            <div class="col-6 mx-3">
                 <img src="./Images/sub-banner2.jpg" alt="" class="w-100">
+                <div class="carousel-caption  mb-2 ms-5 ps-5  col-12">
+                    <div class="text-danger fs-5">SAVE 60%</div>
+                    <div class="text-dark fs-1 fw-bold">WOMEN</div>
+                </div>
             </div>
         </div>
     </section>
@@ -76,41 +138,73 @@
     </div>
     <div class="w-75">
         <div class="offset-5 col-6">
-            <p class="fs-6 text-center">Looking for the latest trends in clothing, shoes and accessories? Welcome to our 'Latest Drops' edit, bringing you all the latest styles from all your fave brands.</p>
+            <p class="fs-6 text-center text-secondary">Looking for the latest trends in clothing, shoes and accessories? Welcome to our 'Latest Drops' edit, bringing you all the latest styles from all your fave brands.</p>
         </div>
     </div>
     <section class="pt-4 pb-5">
         <div class="d-flex container">
-            <div class=" "> 
-                <img src="./Images/11.jpg" alt="" class="w-75">
+            <div class="col-3"> 
+                <img src="./Images/11.jpg" alt="" class="col-11">
+                <div class="rating">
+                    <i class="fa fa-star text-warning"></i>
+                    <i class="fa fa-star text-warning"></i>
+                    <i class="fa fa-star text-warning"></i>
+                    <i class="fa fa-star text-warning"></i>
+                    <i class="fa fa-star text-secondary"></i>
+                </div>
                 <div>Purple Polo Tshirt</div>
                 <div>$20.00</div>
             </div>
-            <div class="">
-                <img src="./Images/21.jpg" alt="" class="w-75">
+            <div class="col-3">
+                <img src="./Images/21.jpg" alt="" class="col-11">
+                <div class="rating">
+                    <i class="fa fa-star text-warning"></i>
+                    <i class="fa fa-star text-warning"></i>
+                    <i class="fa fa-star text-warning"></i>
+                    <i class="fa fa-star text-warning"></i>
+                    <i class="fa fa-star text-secondary"></i>
+                </div>
                 <div>Sleeves White Top</div>
                 <div>$25.00</div>
             </div>
-            <div class="">
-                <img src="./Images/31.jpg" alt="" class="w-75">
-                <div>Multi Color Polo Tshirt</div>
-                <div>$65.00</div>
+            <div class="col-3">
+                <img src="./Images/31.jpg" alt="" class="col-11">
+                <div>
+                    <div class="rating">
+                        <i class="fa fa-star text-warning"></i>
+                        <i class="fa fa-star text-warning"></i>
+                        <i class="fa fa-star text-warning"></i>
+                        <i class="fa fa-star text-warning"></i>
+                        <i class="fa fa-star text-secondary"></i>
+                    </div>
+                    <div>Multi Color Polo Tshirt</div>
+                    <div>$65.00</div>
+                </div>
             </div>
-            <div class="">
-                <img src="./Images/41.jpg" alt="" class="w-75">
+            <div class="col-3">
+                <img src="./Images/41.jpg" alt="" class="col-11">
+                <div class="rating">
+                    <i class="fa fa-star text-warning"></i>
+                    <i class="fa fa-star text-warning"></i>
+                    <i class="fa fa-star text-warning"></i>
+                    <i class="fa fa-star text-warning"></i>
+                    <i class="fa fa-star text-secondary"></i>
+                </div>
                 <div>Candy Red Solid Tshirt</div>
                 <div>$89.00</div>
             </div>
         </div>
     </section>
-    <section class="">
-        <div>
-            <img src="./Images/3.jpg" alt="" class="w-100">
-        </div>
-        <div class="container">
-            <h1>2021</h1>
-            <h1>FASHION TRENDS</h1>
-            <h2>SPECIAL OFFER</h2>
+    <section>
+        <div class=" mt-5 carousel-inner active">
+            <div class="">
+                <img src="./Images/3.jpg" alt="" class="w-100">
+            </div>
+            <div class="container carousel-caption">
+                <h1 class="text-danger">2021</h1>
+                <h1 class="text-dark">FASHION TRENDS</h1>
+                <h2 class="text-secondary">SPECIAL OFFER</h2>
+            </div>
         </div>
     </section>
     <div class="mt-5 text-center">
@@ -118,118 +212,256 @@
         <h2>EVERYDAY CASUAL</h2>
     </div>
     <section class="">
-        <div class="offset-4 text-center fs-5">
+        <div class="col-12 text-center fs-5">
             <nav>
                 <ul class="d-flex list-unstyled ">
-                    <li class="mx-3">WORK CASUAL</li>
+                    <li class="mx-3 col-5 text-end">WORK CASUAL</li>
                     <li class="mx-3">WFH WEAR</li>
-                    <li class="mx-3"> COMFORT WEAR</li>
+                    <li class="mx-3 "> COMFORT WEAR</li>
                 </ul>
             </nav>
         </div>
-        <div class="d-flex container">
-            <div class=" "> 
-                <img src="./Images/11.jpg" alt="" class="w-75">
+        <div class="d-flex flex-wrap container">
+            <div class="col-3 mb-4"> 
+                <img src="./Images/11.jpg" alt="" class="col-11">
+                <div class="rating">
+                    <i class="fa fa-star text-warning"></i>
+                    <i class="fa fa-star text-warning"></i>
+                    <i class="fa fa-star text-warning"></i>
+                    <i class="fa fa-star text-warning"></i>
+                    <i class="fa fa-star text-secondary"></i>
+                </div>
                 <div>Purple Polo Tshirt</div>
                 <div>$20.00</div>
             </div>
-            <div class="">
-                <img src="./Images/21.jpg" alt="" class="w-75">
+            <div class="col-3 mb-4">
+                <img src="./Images/21.jpg" alt="" class="col-11">
+                <div class="rating">
+                    <i class="fa fa-star text-warning"></i>
+                    <i class="fa fa-star text-warning"></i>
+                    <i class="fa fa-star text-warning"></i>
+                    <i class="fa fa-star text-warning"></i>
+                    <i class="fa fa-star text-secondary"></i>
+                </div>
                 <div>Sleeves White Top</div>
                 <div>$25.00</div>
             </div>
-            <div class="">
-                <img src="./Images/31.jpg" alt="" class="w-75">
-                <div>Multi Color Polo Tshirt</div>
-                <div>$65.00</div>
+            <div class="col-3 mb-4">
+                <img src="./Images/31.jpg" alt="" class="col-11">
+                <div>
+                    <div class="rating">
+                        <i class="fa fa-star text-warning"></i>
+                        <i class="fa fa-star text-warning"></i>
+                        <i class="fa fa-star text-warning"></i>
+                        <i class="fa fa-star text-warning"></i>
+                        <i class="fa fa-star text-secondary"></i>
+                    </div>
+                    <div>Multi Color Polo Tshirt</div>
+                    <div>$65.00</div>
+                </div>
             </div>
-            <div class="">
-                <img src="./Images/41.jpg" alt="" class="w-75">
+            <div class="col-3 mb-4">
+                <img src="./Images/41.jpg" alt="" class="col-11">
+                <div class="rating">
+                    <i class="fa fa-star text-warning"></i>
+                    <i class="fa fa-star text-warning"></i>
+                    <i class="fa fa-star text-warning"></i>
+                    <i class="fa fa-star text-warning"></i>
+                    <i class="fa fa-star text-secondary"></i>
+                </div>
                 <div>Candy Red Solid Tshirt</div>
                 <div>$89.00</div>
             </div>
-<!--             <div class="">
-                <img src="./Images/31.jpg" alt="" class="w-75">
+            <div class="col-3">
+                <img src="./Images/31.jpg" alt="" class="col-11">
+                <div class="rating">
+                    <i class="fa fa-star text-warning"></i>
+                    <i class="fa fa-star text-warning"></i>
+                    <i class="fa fa-star text-warning"></i>
+                    <i class="fa fa-star text-warning"></i>
+                    <i class="fa fa-star text-secondary"></i>
+                </div>
                 <div>Multi Color Polo Tshirt</div>
                 <div>$65.00</div>
             </div>
-            </div>
-            <div class="">
-                <img src="./Images/41.jpg" alt="" class="w-75">
+            <div class="col-3">
+                <img src="./Images/41.jpg" alt="" class="col-11">
+                <div class="rating">
+                    <i class="fa fa-star text-warning"></i>
+                    <i class="fa fa-star text-warning"></i>
+                    <i class="fa fa-star text-warning"></i>
+                    <i class="fa fa-star text-warning"></i>
+                    <i class="fa fa-star text-secondary"></i>
+                </div>
                 <div>Candy Red Solid Tshirt</div>
                 <div>$89.00</div>
             </div>
-            <div class="">
-                <img src="./Images/21.jpg" alt="" class="w-75">
+            <div class="col-3">
+                <img src="./Images/21.jpg" alt="" class="col-11">
+                <div class="rating">
+                    <i class="fa fa-star text-warning"></i>
+                    <i class="fa fa-star text-warning"></i>
+                    <i class="fa fa-star text-warning"></i>
+                    <i class="fa fa-star text-warning"></i>
+                    <i class="fa fa-star text-secondary"></i>
+                </div>
                 <div>Sleeves White Top</div>
                 <div>$25.00</div>
             </div>
-            <div class=" "> 
-                <img src="./Images/11.jpg" alt="" class="w-75">
+            <div class="col-3"> 
+                <img src="./Images/11.jpg" alt="" class="col-11">
+                <div class="rating">
+                    <i class="fa fa-star text-warning"></i>
+                    <i class="fa fa-star text-warning"></i>
+                    <i class="fa fa-star text-warning"></i>
+                    <i class="fa fa-star text-warning"></i>
+                    <i class="fa fa-star text-secondary"></i>
+                </div>
                 <div>Purple Polo Tshirt</div>
                 <div>$20.00</div>
-            </div> -->
+            </div>
         </div>
     </section>
-    <footer class="bg-secondary">
-        <div class="container mt-5">
-            <section class="d-flex justify-content-between">
-                <div>
-                    <div>KNOW IT ALL FIRST!</div>
-                    <div>Never Miss Anythink From Multikart By Singing Up To Our Newsletter</div>
+    <div class="container d-flex justify-content-between my-4 py-4 border-top border-end">
+        <div class="d-flex">
+            <div>
+            </div>
+            <div>
+                <div>Free Shipping</div>
+                <div>Free Shipping World Wide</div>
+            </div>
+        </div>
+        <div class="d-flex border-start border-end px-4">
+            <div></div>
+            <div>
+                <div>24 X 7 Service</div>
+                <div>Online Service For New Customer</div>
+            </div>
+        </div>
+        <div class="d-flex">
+            <div></div>
+            <div>
+                <div>Festival Offer</div>
+                <div>New Online Festival Special Offer</div>
+            </div>
+        </div>
+    </div>
+    <div class="container py-3">
+        <div class="row">
+            <div class="co text-center">
+                <div class="text-danger fs-4">From The Blog</div>
+                <div class="fs-2 fw-bold">FASHION FOR YOU</div>
+            </div>
+        </div>
+    </div>
+    <div class="container d-flex">
+        <div class="col-4 text-center">
+            <img src="./Images/a1.jpg" alt="" class="col-11">
+            <div class="text-danger my-3 fs-5">25 January 2018</div>
+            <div class="fs-5 fw-bold my-1">Top 10 January Best-Seller Products - All Under $50</div>
+            <div class="text-secondary my-1">by: John Dio, 2 Comment</div>
+        </div>
+        <div class="col-4 text-center">
+            <img src="./Images/a2.jpg" alt="" class="col-11">
+            <div class="text-danger my-3 fs-5">25 January 2018</div>
+            <div class="fs-5 fw-bold my-1">Quarantine Birthday Celebration | In The Times Of COVID-19</div>
+            <div class="text-secondary my-1">by: John Dio, 2 Comment</div>
+        </div>
+        <div class="col-4 text-center">
+            <img src="./Images/a3.jpg" alt="" class="col-11">
+            <div class="text-danger my-3 fs-5">25 January 2018</div>
+            <div class="fs-5 fw-bold my-1">London fashion & Hair Trends From Fashion Week</div>
+            <div class="text-secondary my-1">by: John Dio, 2 Comment</div>
+        </div>
+    </div>
+    <section>
+        <div class=" col-12 mt-4 ">
+            <div class="text-center fs-2 fw-bold fs-5 mb-3">#WHOWEARWHAT</div>
+            <div class="col-12 d-flex">
+                <img src="./Images/s1.jpg" alt="" class="col-2">
+                <img src="./Images/s2.jpg" alt="" class="col-2">
+                <img src="./Images/s3.jpg" alt="" class="col-2">
+                <img src="./Images/s4.jpg" alt="" class="col-2">
+                <img src="./Images/s5.jpg" alt="" class="col-2">
+                <img src="./Images/s6.jpg" alt="" class="col-2">
+            </div>
+        </div>
+    </section>
+    <div class="container col-12 mt-4 ">
+        <div class="col-12 d-flex">
+            <img src="./Images/l1.png" alt="" class="m-auto">
+            <img src="./Images/l2.png" alt="" class="m-auto">
+            <img src="./Images/l3.png" alt="" class="m-auto">
+            <img src="./Images/l4.png" alt="" class="m-auto">
+            <img src="./Images/l5.png" alt="" class="m-auto">
+            <img src="./Images/l6.png" alt="" class="m-auto">
+        </div>
+    </div>
+    <footer class="bg-light mt-5">
+        <div class="container border-bottom py-4 d-flex justify-content-between">
+                <div class="border-end col-6">
+                    <div class="fs-5 fw-bold">KNOW IT ALL FIRST!</div>
+                    <div class="text-secondary">Never Miss Anythink From Multikart By Singing Up To Our Newsletter</div>
                 </div>
-                <div class="d-flex my-auto">
-                    <div>
-                        <input type="text">
+                <div class="d-flex my-auto col-12 align-content-end">
+                    <div class="col-2"></div>
+                    <div class="col-3 pe-3">
+                        <input type="text" class="p-2 col-12">
                     </div>
-                    <button>SUBSCRIBE</button>
+                    <button class=" text-white bg-danger border-0 p-2 col-1">SUBSCRIBE</button>
                 </div>
-            </section>
         </div>
         <section class="container d-flex mt-4 fs-">
-            <div>
+            <div class="col-5">
                 <div>
                     <img src="./Images/logo.png" alt="">
                 </div>
-                <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,</div>
+                <div class="text-secondary py-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,</div>
+                <div class="d-flex">
+                    <i class="fa fa-facebook pe-4 fs-5" aria-hidden="true"></i>
+                    <i class="fa fa-google-plus pe-4 fs-5" aria-hidden="true"></i>
+                    <i class="fa fa-twitter pe-4 fs-5" aria-hidden="true"></i>
+                    <i class="fa fa-instagram pe-4 fs-5" aria-hidden="true"></i>
+                    <i class="fa fa-rss pe-4 fs-5" aria-hidden="true"></i>
+                </div>
             </div>
-            <div>
-                <div>MY ACCOUNT</div>
+            <div class="col-3 ps-5 ms-5">
+                <div class="fw-bolder fs-5">MY ACCOUNT</div>
                 <div class="mt-3 fs-6">
                     <nav>
-                        <ul class="list-unstyled">
-                            <li>Mens</li>
-                            <li>Womens</li>
-                            <li>Clothes</li>
-                            <li>Accessories</li>
-                            <li>Featured</li>
+                        <ul class="list-unstyled text-secondary">
+                            <li class="py-1">Mens</li>
+                            <li class="py-1">Womens</li>
+                            <li class="py-1">Clothes</li>
+                            <li class="py-1">Accessories</li>
+                            <li class="py-1">Featured</li>
                         </ul>
                     </nav>
                 </div>
             </div>
-            <div>
-                <div>WHY WE CHOOSE</div>
+            <div class="col-2">
+                <div class="fw-bolder fs-5">WHY WE CHOOSE</div>
                 <div class="mt-3 fs-6">
                     <nav>
-                        <ul class="list-unstyled">
-                            <li>Shipping & Return</li>
-                            <li>Secure Shopping</li>
-                            <li>Gallary</li>
-                            <li>Affiliates</li>
-                            <li>Contacts</li>
+                        <ul class="list-unstyled text-secondary">
+                            <li class="py-1">Shipping & Return</li>
+                            <li class="py-1">Secure Shopping</li>
+                            <li class="py-1">Gallary</li>
+                            <li class="py-1">Affiliates</li>
+                            <li class="py-1">Contacts</li>
                         </ul>
                     </nav>
                 </div>
             </div>
-            <div>
-                <div>STORE INFORMATION</div>
-                <div class="mt-3 fs-3">
+            <div class="col-2">
+                <div class="fw-bolder fs-5">STORE INFORMATION</div>
+                <div class="mt-3 fs-6">
                     <nav>
-                        <ul class="list-unstyled">
-                            <li>Multikart Demo Store, Demo Store India 345-659</li>
-                            <li>Call Us: 123-456-7898</li>
-                            <li>Email Us: Support@Fiot.Com</li>
-                            <li>Fax: 123456</li>
+                        <ul class="list-unstyled text-secondary">
+                            <li class="py-1">Multikart Demo Store, Demo Store India 345-659</li>
+                            <li class="py-1">Call Us: 123-456-7898</li>
+                            <li class="py-1">Email Us: Support@Fiot.Com</li>
+                            <li class="py-1">Fax: 123456</li>
                         </ul>
                     </nav>
                 </div>
