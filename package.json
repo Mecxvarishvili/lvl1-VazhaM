@@ -1,0 +1,25 @@
+{
+  "dependencies": {
+    "bootstrap": "^5.0.1"
+  },
+  "name": "git",
+  "version": "1.0.0",
+  "main": "script.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "watch": "sass ./assets/main.scss ./style.css --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Mecxvarishvili/lvl1-VazhaM.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Mecxvarishvili/lvl1-VazhaM/issues"
+  },
+  "homepage": "https://github.com/Mecxvarishvili/lvl1-VazhaM#readme",
+  "description": ""
+}
