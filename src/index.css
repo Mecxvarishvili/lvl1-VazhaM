@@ -1,13 +1,86 @@
-body {
+body, html {
+  width: 100%;
+  height: 100%;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+#root {
+  margin: 100px auto;
 }
+
+.main-container {
+  margin: auto;
+  border: 1px solid #dfdfdf;
+  width: 600px;
+}
+.main-container .header {
+  background-color: #f7f7f7;
+  border-bottom: 1px solid #dfdfdf;
+  height: 50px;
+}
+.main-container .header h2 {
+  margin: 0 auto;
+  width: 550px;
+  font-weight: 400;
+  font-size: 20px;
+  padding-top: 10px;
+}
+.main-container .todos {
+  margin: auto;
+  width: 550px;
+}
+.main-container .todos form {
+  border: 1.5px solid #dfdfdf;
+  height: 35px;
+  display: flex;
+  justify-content: space-between;
+  border-radius: 5px;
+  margin: 20px 0;
+}
+.main-container .todos form input {
+  height: 33px;
+  width: 463px;
+  border: none;
+  border-bottom: 1px solid #dfdfdf;
+  font-size: 16px;
+}
+.main-container .todos form button {
+  border: none;
+  width: 80px;
+  height: 35px;
+  background-color: #007bff;
+  color: white;
+  font-size: 15px;
+  padding: none;
+}
+.main-container .todos ul {
+  list-style: none;
+  padding: 0;
+  border: 1px solid #dfdfdf;
+}
+.main-container .todos ul li:first-child {
+  border-top: 0;
+}
+.main-container .todos ul li {
+  display: flex;
+  justify-content: space-between;
+  height: 40px;
+  border-top: 1px solid #dfdfdf;
+  padding: 10px;
+  padding-bottom: 0;
+}
+.main-container .todos ul li span input {
+  margin: 10px;
+}
+.main-container .todos ul li button {
+  background-color: red;
+  color: white;
+  border: none;
+  width: 40px;
+  height: 30px;
+  border-radius: 5px;
+}
+
+/*# sourceMappingURL=index.css.map */
