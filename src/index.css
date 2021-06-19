@@ -14,6 +14,12 @@ body #root {
 body #root .container {
   width: 1100px;
 }
+body #root .container .before {
+  display: flex;
+  justify-content: center;
+  font-size: 40px;
+  margin: 60px;
+}
 body #root .container header {
   display: flex;
   justify-content: space-between;
@@ -26,6 +32,7 @@ body #root .container header input {
   padding-left: 20px;
   margin: auto 0;
   font-size: 28px;
+  text-transform: capitalize;
 }
 body #root .container header button {
   border: none;
@@ -40,6 +47,9 @@ body #root .container main {
   display: flex;
   justify-content: space-between;
   margin-top: 20px;
+}
+body #root .container main .lds-facebook {
+  margin: 100px auto;
 }
 body #root .container main .mweather {
   width: 400px;
@@ -59,13 +69,25 @@ body #root .container main .mweather .degrees {
   display: flex;
 }
 body #root .container main .mweather .degrees img {
-  width: 60px;
+  height: 73px;
   object-fit: cover;
 }
-body #root .container main .mweather .about {
-  margin: 15px 0;
+body #root .container main .mweather .feelslike {
   font-size: 22px;
   font-weight: bold;
+}
+body #root .container main .mweather .about {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0 20px;
+  border-left: 3px solid orangered;
+  margin: 20px 0;
+}
+body #root .container main .mweather .about div {
+  flex-basis: 178px;
+  font-size: 19px;
+  font-weight: 500;
+  height: 30px;
 }
 body #root .container main .mweather .modal button {
   border: none;
@@ -111,7 +133,7 @@ body #root .container main .mweather .modal .modal-active .modal-container .mhea
   display: flex;
   justify-content: space-between;
   font-size: 22px;
-  padding: 13px;
+  padding: 13px 30px;
   border-bottom: 1px solid gray;
 }
 body #root .container main .mweather .modal .modal-active .modal-container .mheader button {
@@ -133,7 +155,7 @@ body #root .container main .mweather .modal .modal-active .modal-container .mfoo
   font-size: 23px;
 }
 body #root .container main .mweather .modal .modal-active .modal-container .mfooter div div {
-  margin: 0 30px;
+  margin: 0 25px;
 }
 body #root .container main .mweather .modal .modal-active .modal-container .mfooter div .weather img {
   height: 35px;
@@ -145,6 +167,10 @@ body #root .container main .mweather .modal .modal-active .modal-container .mfoo
 }
 body #root .container main .eightforces {
   width: 580px;
+}
+body #root .container main .eightforces .eightdayload {
+  display: flex;
+  justify-content: center;
 }
 body #root .container main .eightforces .eightday {
   font-size: 30px;
@@ -162,16 +188,61 @@ body #root .container main .eightforces .eightresult div {
   font-size: 23px;
 }
 body #root .container main .eightforces .eightresult div .day {
-  flex-basis: 200px;
+  flex-basis: 140px;
+}
+body #root .container main .eightforces .eightresult div .weather {
+  flex-basis: 175px;
 }
 body #root .container main .eightforces .eightresult div .weather img {
   height: 35px;
   object-fit: cover;
 }
 body #root .container main .eightforces .eightresult div .dayinfo {
-  flex-basis: 45px;
+  flex-basis: 150px;
   font-size: 17px;
   color: gray;
+}
+
+.lds-facebook {
+  display: inline-block;
+  position: relative;
+  width: 80px;
+  height: 80px;
+}
+
+.lds-facebook div {
+  display: inline-block;
+  position: absolute;
+  left: 8px;
+  width: 16px;
+  background: black;
+  animation: lds-facebook 1.2s cubic-bezier(0, 0.5, 0.5, 1) infinite;
+}
+
+.lds-facebook div:nth-child(1) {
+  left: 8px;
+  animation-delay: -0.24s;
+}
+
+.lds-facebook div:nth-child(2) {
+  left: 32px;
+  animation-delay: -0.12s;
+}
+
+.lds-facebook div:nth-child(3) {
+  left: 56px;
+  animation-delay: 0;
+}
+
+@keyframes lds-facebook {
+  0% {
+    top: 8px;
+    height: 64px;
+  }
+  50%, 100% {
+    top: 24px;
+    height: 32px;
+  }
 }
 
 /*# sourceMappingURL=index.css.map */

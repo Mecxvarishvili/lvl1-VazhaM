@@ -1,14 +1,12 @@
 import React from 'react';
-import EightDayForecast from './EightDayForecast';
-import Weather from './Weather';
 
-const Main = () => {
+const Main = ({isLoading, children}) => {
+    
     return (
         <main>
-        <Weather />
-        <EightDayForecast />
+            {(isLoading ? <div className="lds-facebook"><div></div><div></div><div></div></div> : children )}
         </main>
-    );
-};
+    )
+}
 
 export default Main;

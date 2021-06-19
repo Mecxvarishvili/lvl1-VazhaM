@@ -1,17 +1,25 @@
 import React from 'react';
 import Modal from './Modal';
 
-const Weather = () => {
+const Weather = (props) => {
+    const data = props.data[0]
     return (
         <div className="mweather">
-            <div className="clock">12:44pm, Jun 12</div>
-            <div className="cityname">London, GB</div>
+            <div className="clock">{data.ob_time}</div>
+            <div className="cityname">{data.city_name}, {data.country_code}</div>
             <div className="degrees">
-                <img src="https://img.pngio.com/cloud-sun-sunny-weather-icon-weather-icons-png-512_512.png" alt=""/>
-                <div> 22&#176;C</div>
+                <img src={`https://www.weatherbit.io/static/img/icons/${data.weather.icon}.png`} />
+                <div> {data.temp}&#176;C</div>
             </div>
-            <div className="about">Feels Like 21&#176;C. Few clouds. Light air</div>
-            <Modal />
+            <div className="feelslike">Feels Like {data.app_temp}&#176;C. {data.weather.description}.</div>
+            <div className="about">
+                <div>{data.wind_spd}m/s {data.wind_cdir}</div>
+                <div>Humidity: {data.rh}%</div>
+                <div>UV: {data.uv}</div>
+                <div>Dew Point: {data.dewpt}</div>
+                <div>Visibility: {data.vis}km</div>
+            </div>
+            <Modal search={props.search}/>
         </div>
     );
 };
