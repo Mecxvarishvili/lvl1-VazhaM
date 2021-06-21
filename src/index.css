@@ -157,13 +157,20 @@ body #root .container main .mweather .modal .modal-active .modal-container .mfoo
 body #root .container main .mweather .modal .modal-active .modal-container .mfooter div div {
   margin: 0 25px;
 }
+body #root .container main .mweather .modal .modal-active .modal-container .mfooter div .day {
+  width: 150px;
+}
+body #root .container main .mweather .modal .modal-active .modal-container .mfooter div .weather {
+  width: 120px;
+}
 body #root .container main .mweather .modal .modal-active .modal-container .mfooter div .weather img {
-  height: 35px;
+  height: 50px;
   object-fit: cover;
 }
 body #root .container main .mweather .modal .modal-active .modal-container .mfooter div .dayinfo {
   font-size: 17px;
   color: gray;
+  width: 150px;
 }
 body #root .container main .eightforces {
   width: 580px;

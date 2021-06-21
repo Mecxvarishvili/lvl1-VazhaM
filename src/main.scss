@@ -174,10 +174,15 @@ body{
                                         div {
                                             margin: 0 25px;
                                         }
+
+                                        .day {
+                                            width: 150px;
+                                        }
             
                                         .weather {
+                                            width: 120px;
                                             img {
-                                                height: 35px;
+                                                height: 50px;
                                                 object-fit: cover;
                                             }
                                         }
@@ -185,6 +190,7 @@ body{
                                         .dayinfo {
                                             font-size: 17px;
                                             color: gray;
+                                            width: 150px;
                                         }
                                     }
                                 }

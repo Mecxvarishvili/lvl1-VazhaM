@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
+import Api_Key from './Api_Key';
 
 const Modal = (props) => {
     
     const [data, setData] = useState({})
 
     function getAPi() {
-        fetch(`https://api.weatherbit.io/v2.0/forecast/hourly?city=${props.search}&key=f635fd423c694871a7bc42d487175b7d&hours=8`)
+        fetch(`https://api.weatherbit.io/v2.0/forecast/hourly?city=${props.search}&key=${ Api_Key}&hours=8`)
         .then(response => response.json())
         .then((weather) => setData(weather))
       }
@@ -14,20 +15,20 @@ const Modal = (props) => {
           getAPi()
       })
 
-    const [cl, setCl] = useState('modal-deactive')
+    const [clas, setClas] = useState('modal-deactive')
 
     function modalActive() {
-        setCl("modal-active")
+        setClas("modal-active")
     }
 
     function modalDisable() {
-        setCl("modal-deactive")
+        setClas("modal-deactive")
     }
 
     return (
         <div className="modal">
             <button onClick={modalActive}>Hourly Forecast</button>
-            <div className={cl}>
+            <div className={clas}>
                 <div className="modal-container">
                     <div className="mheader">
                         <div>Hourly Forecas</div>
@@ -40,8 +41,8 @@ const Modal = (props) => {
                                     <div>
                                        <div className="day">{data.datetime}</div>
                                        <div className="weather">
-                                           <img src="https://img.icons8.com/emoji/452/sun-emoji.png" alt=""/>
-                                           <span>25&#176;C </span>
+                                           <img src={`https://www.weatherbit.io/static/img/icons/${data.weather.icon}.png`} alt=""/>
+                                           <span>{data.temp}&#176;C </span>
                                        </div>
                                        <div className="dayinfo">{data.weather.description}</div>
                                    </div>

@@ -1,12 +1,13 @@
 import React, { useState } from 'react';
-
+import Spinner from './Spinner';
+import Api_Key from './Api_Key';
 
 const EightDayForecast = (props) => {
     
     const [data, setData] = useState({})
 
     function getAPi() {
-        fetch(`https://api.weatherbit.io/v2.0/forecast/daily?city=${props.search}&key=f635fd423c694871a7bc42d487175b7d&days=8`)
+        fetch(`https://api.weatherbit.io/v2.0/forecast/daily?city=${props.search}&key=${ Api_Key }&days=8`)
         .then(response => response.json())
         .then((weather) => setData(weather))
       }
@@ -35,7 +36,7 @@ const EightDayForecast = (props) => {
                         )
                     })}
                 </div>
-                : <div className="eightdayload"><div className="lds-facebook"><div></div><div></div><div></div></div></div>
+                : <div className="eightdayload"><Spinner /> </div>
                 }
                 {/* <div>
                     <div className="day">Sat, Jun 12</div>
