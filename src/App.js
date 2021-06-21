@@ -7,7 +7,7 @@ import Loader from './components/Loader';
 import Api_Key from './components/Api_Key';
 
 const App = () => {
-  const [search, setSearch] = useState('tbilisi')
+  const [search, setSearch] = useState('')
   const [load, setLoad] = useState({ isLoading: true, mainLoad: false,})
   const [data, setData] = useState({})
   
@@ -23,15 +23,13 @@ const App = () => {
     setSearch( e.target.value)
   }
 
- 
-
-    return (
-      
-      <div className="container">
-        <Header handleGetAPi={handleGetAPi} handleChange={handleChange}/>
-        {(load.mainLoad) ? <Loader isLoading={load.isLoading}><Weather data={data.data} search={search} /><EightDayForecast search={search} /></Loader> : <Before />}
-      </div>
-    );
+  return (
+    
+    <div className="container">
+      <Header handleGetAPi={handleGetAPi} handleChange={handleChange}/>
+      {(load.mainLoad) ? <Loader isLoading={load.isLoading}><Weather data={data.data} search={search} /><EightDayForecast search={search} /></Loader> : <Before />}
+    </div>
+  );
   
 };
 
