@@ -1,21 +1,20 @@
 import React, { useState } from 'react';
 import Header from './components/Header';
-import Before from './components/Before';
-import EightDayForecast from './components/EightDayForecast';
-import Weather from './components/Weather';
 import Loader from './components/Loader';
-import Api_Key from './components/Api_Key';
+import Main from './components/Main';
+import Before from './components/Before';
 
 const App = () => {
   const [search, setSearch] = useState('')
   const [load, setLoad] = useState({ isLoading: true, mainLoad: false,})
   const [data, setData] = useState({})
+
   
-  function handleGetAPi() {
+  function handleGetApi() {
     setLoad({mainLoad: true, isLoading: true})
-    fetch(`https://api.weatherbit.io/v2.0/current?city=${search}&key=${Api_Key}`)
+    fetch(`https://itunes.apple.com/search?term=${search}`)
     .then(response => response.json())
-    .then((data) => setData(data)).finally(() => {setLoad({mainLoad: true, isLoading: false})})
+    .then((data) => {setData(data)}).finally(() => {setLoad({mainLoad: true, isLoading: false})})
   }
   
 
@@ -26,11 +25,10 @@ const App = () => {
   return (
     
     <div className="container">
-      <Header handleGetAPi={handleGetAPi} handleChange={handleChange}/>
-      {(load.mainLoad) ? <Loader isLoading={load.isLoading}><Weather data={data.data} search={search} /><EightDayForecast search={search} /></Loader> : <Before />}
+            <Header handleGetApi={handleGetApi} handleChange={handleChange}/>
+            {(load.mainLoad) ? <Loader isLoading={load.isLoading}><Main data={data.results} error={data.resultCount} /></Loader> : <Before />}
     </div>
-  );
-  
+  )
 };
 
 export default App;

@@ -1,11 +1,11 @@
 import React from 'react';
 
-const Load = () => {
+const Before = () => {
     return (
         <main className="before">
-            <div>Enter City Name</div>
+            Enter music name
         </main>
     );
 };
 
-export default Load;
+export default Before;
