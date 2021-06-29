@@ -1,8 +1,9 @@
 import React from 'react';
+import Welcome from './Welcome';
 
-const Loader = () => {
+const Loader = (props) => {
     return (
-            <div className="lds-facebook"><div></div><div></div><div></div></div>
+           props.data ?  <Welcome name={props.name} /> : <div className="spinner"><div className="lds-facebook"><div></div><div></div><div></div></div></div>
     );
 };
 

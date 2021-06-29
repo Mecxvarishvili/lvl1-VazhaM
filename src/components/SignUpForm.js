@@ -2,9 +2,8 @@ import React from 'react';
 import Loader from './Loader';
 
 const SignUpForm = (props) => {
-    const ab = true;
     return (
-        ab ? props.children : <Loader />
+        props.loading ? <Loader data={props.data} name={props.name}/> : props.children 
     );
 };
 

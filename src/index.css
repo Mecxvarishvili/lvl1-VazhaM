@@ -9,35 +9,60 @@ body {
 }
 body #root {
   width: 500px;
-  height: 650px;
+  margin: 0 auto;
+}
+body #root .container {
+  width: 500px;
+  min-height: 520px;
   margin: 20px auto;
   background-color: white;
+  box-shadow: 1px 2px 3px;
+  border-radius: 5px;
 }
-body #root form {
+body #root .container form {
   display: flex;
   flex-wrap: wrap;
   padding: 10px 20px;
 }
-body #root form label {
+body #root .container form label {
   width: 460px;
   margin-top: 25px;
   font-size: 22px;
 }
-body #root form input {
+body #root .container form input {
   width: 460px;
   height: 30px;
   font-size: 20px;
   margin-top: 10px;
   outline: none;
 }
-body #root form button {
+body #root .container form .forbutton {
+  width: 450px;
+}
+body #root .container form .forbutton button {
   border: none;
   border-radius: 8px;
   width: 100px;
   height: 40px;
   font-size: 20px;
-  margin-top: 30px;
+  margin: 30px 0px;
   display: block;
+}
+body #root .container form .error {
+  color: red;
+  font-size: 17px;
+  margin-top: 10px;
+}
+body #root .spinner {
+  display: flex;
+  justify-content: center;
+  margin: 50px 0;
+}
+body #root .welcome {
+  display: flex;
+  justify-content: center;
+  margin: 70px 0;
+  font-size: 35px;
 }
 
 .lds-facebook {
@@ -52,7 +77,7 @@ body #root form button {
   position: absolute;
   left: 8px;
   width: 16px;
-  background: #fff;
+  background: black;
   animation: lds-facebook 1.2s cubic-bezier(0, 0.5, 0.5, 1) infinite;
 }
 
